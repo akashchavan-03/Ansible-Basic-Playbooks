@@ -1,0 +1,10 @@
+---
+- name: File creation playbook
+  hosts: localhost
+  become: true
+
+  tasks:
+    - name: Create file with content
+      copy:
+        dest: /root/newfile.txt
+        content: "Hello Ansible\n"
