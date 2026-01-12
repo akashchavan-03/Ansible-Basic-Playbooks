@@ -1,0 +1,12 @@
+---
+- name: Copy file with owner and permissions
+  hosts: localhost
+  become: yes
+
+  tasks:
+    - name: Copy file
+      ansible.builtin.copy:
+        src: /root/newfile.txt
+        dest: /home/ec2-user/aws/newfile.txt
+        owner: ec2-user
+        group: ec2-user
